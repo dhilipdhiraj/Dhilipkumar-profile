@@ -15,14 +15,14 @@ const Projects = () => {
     {
       title: "BHCL – Beyond Horizon",
       description: "Built responsive trading dashboards using React and Tailwind, ensuring seamless performance across devices and browsers. Improved page load speed by 35% through code-splitting, caching strategies, and lazy loading of heavy components.",
-      image: "/src/assets/herosection2.svg",
+      image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=400&fit=crop",
       tags: [""],
       link: "#"
     },
     {
       title: "D5art",
       description: "Delivered interactive NFT gallery with dynamic filtering and search, increasing user session time by 45%. Implemented wallet integration with smooth UX, boosting transaction completion rate by 30%.",
-      image: "/src/assets/SeekerMascot.png",
+      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop",
       tags: [""],
       link: "#"
     },
