@@ -1,0 +1,160 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Portfolio Design System - Dark theme with purple accents */
+
+@layer base {
+  :root {
+    /* Dark portfolio theme */
+    --background: 223 47% 7%;
+    --foreground: 213 31% 91%;
+
+    --card: 223 41% 11%;
+    --card-foreground: 213 31% 91%;
+
+    --popover: 223 41% 11%;
+    --popover-foreground: 213 31% 91%;
+
+    /* Purple branding */
+    --primary: 262 83% 58%;
+    --primary-foreground: 210 40% 98%;
+    --primary-glow: 262 100% 75%;
+
+    --secondary: 223 41% 15%;
+    --secondary-foreground: 213 31% 91%;
+
+    --muted: 223 41% 15%;
+    --muted-foreground: 215.4 16.3% 65%;
+
+    --accent: 262 83% 58%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 223 41% 15%;
+    --input: 223 41% 15%;
+    --ring: 262 83% 58%;
+
+    --radius: 0.75rem;
+
+    /* Portfolio-specific design tokens */
+    --gradient-hero: linear-gradient(135deg, hsl(223 47% 7%), hsl(262 47% 15%));
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-card: linear-gradient(145deg, hsl(223 41% 11%), hsl(223 41% 13%));
+    
+    --shadow-elegant: 0 10px 30px -10px hsl(262 83% 58% / 0.3);
+    --shadow-glow: 0 0 40px hsl(262 100% 75% / 0.4);
+    --shadow-card: 0 8px 32px hsl(223 47% 7% / 0.6);
+
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-glow: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    /* Sidebar - not used in portfolio but keeping for consistency */
+    --sidebar-background: 223 41% 11%;
+    --sidebar-foreground: 213 31% 91%;
+    --sidebar-primary: 262 83% 58%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 223 41% 15%;
+    --sidebar-accent-foreground: 213 31% 91%;
+    --sidebar-border: 223 41% 15%;
+    --sidebar-ring: 262 83% 58%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    background: var(--gradient-hero);
+    min-height: 100vh;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary));
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary-glow));
+  }
+}
+
+@layer components {
+  /* Portfolio-specific components */
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+
+  .card-gradient {
+    background: var(--gradient-card);
+  }
+
+  .primary-gradient {
+    background: var(--gradient-primary);
+  }
+
+  .shadow-elegant {
+    box-shadow: var(--shadow-elegant);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  .transition-glow {
+    transition: var(--transition-glow);
+  }
+
+  /* Skill tag styles */
+  .skill-tag {
+    @apply inline-block px-3 py-1 text-sm rounded-full transition-smooth;
+    background: hsl(var(--muted));
+    color: hsl(var(--foreground));
+  }
+
+  .skill-tag:hover {
+    background: hsl(var(--primary) / 0.2);
+    transform: translateY(-1px);
+  }
+
+  /* Glow effects */
+  .glow-on-hover:hover {
+    box-shadow: var(--shadow-glow);
+    transform: translateY(-2px);
+  }
+
+  /* Text gradients */
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
